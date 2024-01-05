@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.doremin.util.sceneLifecycleApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:UIApplicationSceneManifest</key>
+		<dict>
+			<key>Beginning</key>
+			<string>
+            &lt;key&gt;UIApplicationSceneManifest&lt;/key&gt;
+            &lt;dict&gt;
+                &lt;key&gt;UIApplicationSupportsMultipleScenes&lt;/key&gt;
+                &lt;false/&gt;
+                &lt;key&gt;UISceneConfigurations&lt;/key&gt;
+                &lt;dict&gt;
+                    &lt;key&gt;UIWindowSceneSessionRoleApplication&lt;/key&gt;
+                    &lt;array&gt;
+                        &lt;dict&gt;
+                            &lt;key&gt;UISceneConfigurationName&lt;/key&gt;
+                            &lt;string&gt;Default Configuration&lt;/string&gt;
+                            &lt;key&gt;UISceneDelegateClassName&lt;/key&gt;
+                            &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses:XML___SceneDelegate&lt;/string&gt;
+</string>
+			<key>End</key>
+			<string>
+                        &lt;/dict&gt;
+                    &lt;/array&gt;
+                &lt;/dict&gt;
+            &lt;/dict&gt;
+</string>
+			<key>Indent</key>
+			<integer>2</integer>
+		</dict>
+		<key>*:implementation:methods:sceneWillConnectToSession:comments</key>
+		<string></string>
+	</dict>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>appLifecycle</string>
+			<key>Units</key>
+			<dict>
+				<key>Cocoa</key>
+				<array>
+					<dict>
+						<key>Nodes</key>
+						<array>
+							<string>Info.plist:UIApplicationSceneManifest</string>
+						</array>
+						<key>Targets</key>
+						<array>
+							<dict>
+								<key>SharedSettings</key>
+								<dict>
+									<key>INFOPLIST_FILE</key>
+									<string>___PACKAGENAME___/Info.plist</string>
+								</dict>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>appLifecycle</key>
+							<string>Cocoa</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>SceneDelegate.swift:comments</string>
+							<string>SceneDelegate.swift:imports:importCocoa</string>
+							<string>SceneDelegate.swift:implementation(SceneDelegate: UIResponder, UIWindowSceneDelegate)</string>
+							<string>SceneDelegate.swift:implementation:properties:window</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession(func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:comments</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.swift:implementation:properties:window</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillResignActive</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillResignActive:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidEnterBackground</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidEnterBackground:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillEnterForeground</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillEnterForeground:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidBecomeActive</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidBecomeActive:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:UISceneSessionLifecycleBanner</key>
+							<string>// MARK: UISceneSession Lifecycle
+
+</string>
+							<key>AppDelegate.swift:implementation:methods:applicationconfigurationForConnectingSceneSession:body</key>
+							<string>return UISceneConfiguration(name: &quot;Default Configuration&quot;, sessionRole: connectingSceneSession.role)</string>
+							<key>SceneDelegate.swift:implementation:properties:window</key>
+							<string>var window: UIWindow?</string>
+							<key>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</key>
+							<string>guard let windowScene = (scene as? UIWindowScene) else { return }
+window = UIWindow(windowScene: windowScene)
+window?.rootViewController = ViewController()
+window?.makeKeyAndVisible()</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>storageType</key>
+							<string>Core Data</string>
+							<key>appLifecycle</key>
+							<string>Cocoa</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidEnterBackground:saveCoreDataContext</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>SceneDelegate.swift:implementation:methods:sceneDidEnterBackground:saveCoreDataContext</key>
+							<string>
+// Save changes in the application&apos;s managed object context when the application transitions to the background.
+(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+</string>
+							<key>*:importCoreData</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidEnterBackground:save</key>
+							<string></string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
